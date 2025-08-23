@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: WF Resources
- * Plugin URI: https://domain.com/wf-wp-resources
+ * Plugin URI: https://wengindustries.com
  * Description: Help documentation inside WP Admin Dashboard for Wordpress and the most common site builders like Gutenberg, Classic Editor, WPBakery, and Elementor Pro.
  * Version: 1.1.0
  * Author: Weng Fei Fung
- * Author URI: https://domain.com
+ * Author URI: https://wengindustries.com
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: wf-wordpress-resources
