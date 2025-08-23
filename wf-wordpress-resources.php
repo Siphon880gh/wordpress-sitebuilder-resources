@@ -74,6 +74,10 @@ class WF_Resources {
                    class="nav-tab <?php echo $active_tab === 'wpbakery' ? 'nav-tab-active' : ''; ?>">
                     WPBakery
                 </a>
+                <a href="?page=wf-wordpress-resources&tab=elementor"
+                   class="nav-tab <?php echo $active_tab === 'elementor' ? 'nav-tab-active' : ''; ?>">
+                    Elementor
+                </a>
             </h2>
     
             <div class="tab-content">
@@ -88,6 +92,10 @@ class WF_Resources {
     
                 else if ($active_tab === 'wpbakery') {
                     include plugin_dir_path(__FILE__) . 'views/wpbakery-page.php';
+                }
+    
+                else if ($active_tab === 'elementor') {
+                    include plugin_dir_path(__FILE__) . 'views/elementor-page.php';
                 }
 
                 else {
