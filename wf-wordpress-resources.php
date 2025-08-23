@@ -66,6 +66,10 @@ class WF_Resources {
                    class="nav-tab <?php echo $active_tab === 'wp' ? 'nav-tab-active' : ''; ?>">
                     Wordpress
                 </a>
+                <a href="?page=wf-wordpress-resources&tab=classic"
+                   class="nav-tab <?php echo $active_tab === 'classic' ? 'nav-tab-active' : ''; ?>">
+                    Classic
+                </a>
                 <a href="?page=wf-wordpress-resources&tab=gutenberg"
                    class="nav-tab <?php echo $active_tab === 'gutenberg' ? 'nav-tab-active' : ''; ?>">
                     Gutenberg
@@ -86,6 +90,10 @@ class WF_Resources {
                     include plugin_dir_path(__FILE__) . 'views/main-page.php';
                 }
     
+                else if ($active_tab === 'classic') {
+                    include plugin_dir_path(__FILE__) . 'views/classic-page.php';
+                }
+
                 else if ($active_tab === 'gutenberg') {
                     include plugin_dir_path(__FILE__) . 'views/gutenberg-page.php';
                 }
