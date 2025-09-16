@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WF Resources
+ * Plugin Name: WF Wordpress Sitebuilder Resources
  * Plugin URI: https://wengindustries.com
  * Description: Help documentation inside WP Admin Dashboard for Wordpress and the most common site builders like Gutenberg, Classic Editor, WPBakery, and Elementor Pro.
  * Version: 1.1.0
@@ -8,7 +8,7 @@
  * Author URI: https://wengindustries.com
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: wf-wordpress-resources
+ * Text Domain: wf-wordpress-sitebuilder-resources
  * Domain Path: /languages
  */
 
