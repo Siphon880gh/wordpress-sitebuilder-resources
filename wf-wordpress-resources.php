@@ -65,6 +65,15 @@ class WF_Resources {
                 };',
                 'after'
             );
+
+            // Animation JS file
+            wp_enqueue_script(
+                'wf-resources-some-js',
+                plugin_dir_url(__FILE__) . 'js/plugins.js',
+                array(),
+                '1.0.0',
+                true
+            );
         
         }
     } // enqueue_admin_styles

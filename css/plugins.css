@@ -1,3 +1,295 @@
+/* ==========================================================================
+   WordPress Resources Plugin - Panel Animations & Styling
+   ========================================================================== */
+
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+}
+
+/* Hide default h1 if needed */
 h1 {
     display: none;
+}
+
+/* ==========================================================================
+   Tab Animation Enhancements
+   ========================================================================== */
+
+.nav-tab-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.nav-tab {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 8px 8px 0 0 !important;
+    overflow: hidden;
+}
+
+.nav-tab:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.nav-tab-active {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+    color: white !important;
+}
+
+/* ==========================================================================
+   Panel Container Animations
+   ========================================================================== */
+
+.tab-content {
+    position: relative;
+    min-height: 400px;
+}
+
+.resource-panel {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   Resource Cards Styling & Animations
+   ========================================================================== */
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.resource-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    animation: cardEntrance 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.resource-card:nth-child(1) { animation-delay: 0.1s; }
+.resource-card:nth-child(2) { animation-delay: 0.2s; }
+.resource-card:nth-child(3) { animation-delay: 0.3s; }
+.resource-card:nth-child(4) { animation-delay: 0.4s; }
+.resource-card:nth-child(5) { animation-delay: 0.5s; }
+.resource-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.resource-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: #3b82f6;
+}
+
+.resource-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.resource-card:hover::before {
+    left: 100%;
+}
+
+/* ==========================================================================
+   Card Content Styling
+   ========================================================================== */
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.card-icon.wordpress { background: linear-gradient(135deg, #21759b 0%, #0073aa 100%); color: white; }
+.card-icon.classic { background: linear-gradient(135deg, #666 0%, #444 100%); color: white; }
+.card-icon.gutenberg { background: linear-gradient(135deg, #0073aa 0%, #005177 100%); color: white; }
+.card-icon.wpbakery { background: linear-gradient(135deg, #007cba 0%, #005a87 100%); color: white; }
+.card-icon.elementor { background: linear-gradient(135deg, #ea4c89 0%, #d63384 100%); color: white; }
+
+.resource-card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.resource-card:hover .card-title {
+    color: #3b82f6;
+}
+
+.card-description {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.card-link:hover {
+    color: #1d4ed8;
+    transform: translateX(4px);
+}
+
+.card-link::after {
+    content: '→';
+    transition: transform 0.3s ease;
+}
+
+.card-link:hover::after {
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Loading Animation
+   ========================================================================== */
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e2e8f0;
+    border-top: 4px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   Pulse Animation for Interactive Elements
+   ========================================================================== */
+
+.pulse-on-hover {
+    transition: all 0.3s ease;
+}
+
+.pulse-on-hover:hover {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ==========================================================================
+   Stagger Animation for Lists
+   ========================================================================== */
+
+.stagger-animation > * {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .resource-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .resource-card {
+        padding: 1rem;
+    }
+    
+    .nav-tab {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
 }
