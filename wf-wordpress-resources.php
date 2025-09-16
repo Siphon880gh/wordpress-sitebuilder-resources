@@ -74,7 +74,11 @@ class WF_Resources {
                 '1.0.0',
                 true
             );
-        
+
+            // Standalone inline script - register without source file
+            wp_register_script('wf-resources-stop-anim', false, array('jquery'), '1.0.0', true);
+            wp_enqueue_script('wf-resources-stop-anim');
+            wp_add_inline_script('wf-resources-stop-anim', 'jQuery(".resource-card").on("mouseenter", function() { jQuery(this).find(".card-icon")[0].style=""; });');
         }
     } // enqueue_admin_styles
 
